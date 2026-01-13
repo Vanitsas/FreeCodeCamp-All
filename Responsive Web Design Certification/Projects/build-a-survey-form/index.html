@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Survey Form</title>
+</head>
+<body>
+ <h1 id="title">Survey Form</h1>
+  <p id="description">Please fill out this survey to help us understand your preferences.</p>
+
+  <form id="survey-form">
+
+    <!-- Name Input -->
+    <label for="name" id="name-label">Full Name:</label>
+    <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+    <br><br>
+
+    <!-- Email Input -->
+    <label for="email" id="email-label">Email:</label>
+    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+    <br><br>
+
+    <!-- Number Input -->
+    <label for="number" id="number-label">Age:</label>
+    <input type="number" id="number" name="number" placeholder="0" min="0" max="120" required>
+
+    <br><br>
+
+    <!-- Dropdown Select -->
+    <label for="dropdown">Select your favorite topic:</label>
+    <select id="dropdown" name="dropdown">
+      <option value="web">Web Development</option>
+      <option value="security">Cyber Security</option>
+      <option value="data">Data Analysis</option>
+    </select>
+
+    <br><br>
+
+    <!-- Radio Buttons -->
+    <fieldset>
+      <legend>Preferred Platform</legend>
+      <input type="radio" id="radio1" name="platform" value="windows" required>
+      <label for="radio1">Windows</label>
+
+      <input type="radio" id="radio2" name="platform" value="linux">
+      <label for="radio2">Linux</label>
+    </fieldset>
+
+    <br>
+
+    <!-- Checkboxes -->
+    <fieldset>
+      <legend>Tools you use</legend>
+      <input type="checkbox" id="tool1" name="tools" value="vscode">
+      <label for="tool1">VS Code</label>
+
+      <input type="checkbox" id="tool2" name="tools" value="git">
+      <label for="tool2">Git</label>
+    </fieldset>
+
+    <br>
+
+    <!-- Textarea for comments -->
+    <label for="comments">Additional Comments:</label>
+    <textarea id="comments" name="comments" placeholder="Write any additional comments here"></textarea>
+
+    <br><br>
+
+    <!-- Submit Button -->
+    <input type="submit" id="submit" class="submit" value="Submit">
+
+  </form>
+</body>
+</html>
