@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Checkout Page</title>
+</head>
+<body>
+
+  <!-- Page Title -->
+  <h1>Checkout</h1>
+
+  <!-- First Section: Your Cart -->
+  <section>
+    <h2>Your Cart</h2>
+    <img src="https://cdn.freecodecamp.org/curriculum/labs/cube.jpg" alt="Cube Product Image">
+  </section>
+
+  <!-- Second Section: Payment Information -->
+  <section>
+    <h2>Payment Information</h2>
+
+    <!-- Payment Form -->
+    <form>
+      <!-- Card Name Input -->
+      <label for="card-name">
+        Card Name
+        <span aria-hidden="true">*</span>
+      </label>
+      <input type="text" id="card-name" name="card-name" required>
+
+      <!-- Card Number Input -->
+      <label for="card-number">
+        Card Number
+        <span aria-hidden="true">*</span>
+      </label>
+      <input type="text" id="card-number" name="card-number" required aria-describedby="card-number-help">
+      <p id="card-number-help">Enter the 16-digit card number as shown on your card.</p>
+
+      <!-- Submit Button -->
+      <button type="submit">Pay Now</button>
+    </form>
+  </section>
+
+</body>
+</html>
