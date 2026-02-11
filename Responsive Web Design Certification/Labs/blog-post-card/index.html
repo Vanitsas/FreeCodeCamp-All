@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Blog Post Card</title>
+
+  <style>
+    body {
+      background-color: #cccccc;
+    }
+
+    .blog-post-card {
+      background-color: white;
+      border-radius: 10px;
+      width: 300px;
+      text-align: left;
+    }
+
+    .post-img {
+      width: 100%;
+      border-bottom: 2px solid black;
+    }
+
+    .post-content {
+      padding: 15px;
+    }
+
+    .post-title {
+      color: red;
+      margin: 10px;
+    }
+
+    .post-excerpt {
+      color: blue;
+      margin: 10px;
+    }
+
+    .read-more {
+      color: white;
+      background-color: black;
+      margin: 10px;
+      padding: 10px;
+      display: inline-block;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+
+    .read-more:hover {
+      background-color: gray;
+    }
+  </style>
+
+</head>
+<body>
+
+  <div class="blog-post-card">
+    <img
+      class="post-img"
+      src="https://cdn.freecodecamp.org/curriculum/labs/cover-photo.jpg"
+      alt="Cover image"
+    >
+
+    <div class="post-content">
+      <h2 class="post-title">Blog Post Title</h2>
+
+      <p class="post-excerpt">
+        This is a short summary of the blog post.
+      </p>
+
+      <a href="#" class="read-more">Read More</a>
+    </div>
+  </div>
+
+</body>
+</html>
