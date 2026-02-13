@@ -1,0 +1,41 @@
+Tasarım Temelleri İncelemesi
+Tasarım Terminolojisi
+Sayfa düzeni (Layout) : Görsel öğelerin bir mesajı iletmek için sayfada veya ekranda nasıl düzenlendiğidir. Bu öğeler metin, resimler ve boş alanları içerebilir.
+Hizalama : Bu, öğelerin birbirlerine göre nasıl yerleştirildiğini ifade eder. Hizalamayı doğru kullanmak, tasarımın temiz ve düzenli görünmesine yardımcı olur.
+Kompozisyon : Bu, uyumlu bir tasarım oluşturmak için unsurları düzenleme eylemidir. Görüntüler, metin ve şekiller gibi unsurların birbirleriyle nasıl ilişkili olduğunu ve tasarıma sanatsal bir şekilde nasıl katkıda bulunduğunu belirler.
+Denge : Bu, bir kompozisyon içindeki görsel ağırlığın dağılımıdır. Tasarımcılar, simetrik veya asimetrik düzenlemeler yoluyla bir denge yaratmayı amaçlar.
+Ölçek : Bu, bir öğenin boyutlarını veya büyüklüğünü başka bir öğenin boyutlarıyla karşılaştırmayı ifade eder.
+Hiyerarşi : Bu, bir tasarımda öğelerin önem sırasını belirler. En önemli bilgilerin önce fark edilmesini sağlamakla ilgilidir.
+Kontrast : Bu, öğeler arasında net ayrımlar oluşturma sürecidir. Bunu renk, boyut, şekil, doku veya diğer görsel özelliklerdeki farklılıklar yoluyla yapabilirsiniz. Güçlü kontrast, okunabilirliği artırmak için de faydalıdır.
+Beyaz Alan (negatif alan) : Bu, bir tasarımda boş alandır. Öğeleri çevreleyen alandır.
+Kullanıcı Arayüzü (UI) : Kullanıcı arayüzü, kullanıcıların ekranlarında görebilecekleri simgeler, resimler, metinler, menüler, bağlantılar ve düğmeler gibi görsel ve etkileşimli öğeleri içerir.
+UX (Kullanıcı Deneyimi) : UX, kullanıcıların bir ürün veya hizmeti kullanırken nasıl hissettikleriyle ilgilidir. İyi tasarlanmış bir kullanıcı deneyimine sahip bir uygulama sezgisel, kullanımı kolay, verimli, erişilebilir ve keyifli olur.
+Tasarım Özeti : Bu, bir projenin amaçlarını, hedeflerini ve gereksinimlerini özetleyen bir belgedir. Tasarım sürecine rehberlik eden ve nihai ürünün müşterinin ihtiyaçlarını karşılamasını sağlayan bir yol haritasıdır.
+Vektör Tabanlı Tasarım : Bu, çizgileri, şekilleri ve renkleri tanımlamak için matematiksel formüller kullanarak dijital sanat eserleri oluşturmayı içerir.
+Prototipleme : Bu, bir ürünün veya kullanıcı arayüzünün etkileşimli bir modelini oluşturma sürecini ifade eder.
+Kullanıcı Arayüzü Tasarımının Temelleri
+Arka Plan ve Ön Plan Renkleri İçin İyi Kontrast : Metnin okunabilirliğini sağlamak için arka plan ve ön plan renklerinin iyi bir kontrasta sahip olması önemlidir. Web İçeriği Erişilebilirlik Yönergeleri (WCAG), normal metin için minimum 4,5:1 ve büyük metin için 3:1 kontrast oranını önermektedir.
+Tasarımda İyi Bir Görsel Hiyerarşi : Güçlü bir görsel hiyerarşi, gözün izleyeceği net bir yol sağlayarak, ilettiğiniz bilgilerin amaçladığınız sırayla algılanmasını sağlar.
+Duyarlı Görseller : Duyarlı görseller, görüntülendikleri ekranın boyutuna uyacak şekilde ölçeklenen görsellerdir. Bu önemlidir çünkü görsellerinizin masaüstü bilgisayarlardan cep telefonlarına kadar tüm cihazlarda iyi görünmesini sağlar.
+Aşamalı Geliştirme : Bu, tüm kullanıcıların, tarayıcı veya cihazdan bağımsız olarak, bir uygulamanın temel içeriğine ve işlevlerine erişebilmesini sağlayan bir tasarım yaklaşımıdır.
+Kullanıcı Odaklı Tasarım : Bu yaklaşım, son kullanıcının ihtiyaçlarından tercihlerine ve sınırlamalarına kadar her şeyini önceliklendirir. Kullanıcı odaklı tasarımın amacı, sezgisel, verimli ve kullanıcılarınızın etkileşim kurmaktan keyif alacağı bir web sayfası oluşturmaktır.
+Kullanıcı Araştırması : Bu, ürününüzü kullanan kişilerin sistematik olarak incelenmesidir. Amaç, kullanıcı ihtiyaçlarını, davranışlarını ve sorunlarını ölçmektir.
+Çıkış Görüşmeleri : Bu, kullanıcılar hesaplarını iptal ettiklerinde onlara uygulayabileceğiniz bir ankettir. Kullanıcıların neden ayrıldığını ve müşteri kaybını azaltmak için neler yapabileceğinizi anlamanıza yardımcı olabilir.
+Kullanıcı Testi : Bu, kullanıcıların uygulamanızla etkileşim kurarken veri toplama uygulamasına verilen addır.
+A/B Testi : Bu, yeni bir özelliği kullanıcı tabanınızın rastgele seçilmiş bir alt kümesine sunma sürecidir. Daha sonra, özelliğin faydalı olup olmadığını belirlemek için analiz verilerinden yararlanabilirsiniz.
+Kullanıcı Gereksinimleri : Bu, uygulamanızın uyması gereken senaryoları veya kriterleri ifade eder. Kullanıcı gereksinimleri, kullanıcı araştırmaları veya sektör standartları tarafından tanımlanabilir. Hatta paydaş girdileriyle de tanımlanabilirler.
+Aşamalı Bilgilendirme : Bu, kullanıcılara yalnızca mevcut etkinliklerine göre alakalı içerik göstermek ve geri kalanını gizlemek için kullanılan bir tasarım desenidir. Bu, bilişsel yükü azaltmak ve kullanıcı deneyimini daha sezgisel hale getirmek için yapılır.
+Ertelenmiş/Tembel Kayıt : Bu, kullanıcıların kayıt olmaları gerekmeden uygulamanızda gezinmelerine ve etkileşimde bulunmalarına olanak tanıyan bir kullanıcı arayüzü tasarım desenidir.
+Tasarımda En İyi Uygulamalar
+Koyu Mod : Bu, web uygulamalarında varsayılan açık renk şemasını koyu renk şemasına değiştirebileceğiniz özel bir özelliktir. Koyu modda doygunluğu azaltılmış renkler kullanmalısınız. Doygunluğu azaltılmış renkler, daha az yoğun ve daha düşük doygunluk seviyesine sahip renklerdir.
+Gezinme yolu (Breadcrumbs ): Bu, kullanıcının sitenin hiyerarşisinde nerede olduğunu gösteren bir gezinme aracıdır. Kullanıcıların kolayca bulabilmesi için gezinme yolunu sayfanın en üstüne yerleştirmek en iyisidir. Ayrıca, gezinme yolunun kolayca okunabilecek kadar büyük, ancak sayfada çok fazla yer kaplamayacak kadar küçük olduğundan emin olmalısınız.
+Kart Bileşeni : Kart bileşeniniz tasarım olarak sade olmalı, görsel olarak karmaşık olmamalı veya çok fazla bilgi içermemelidir. Medya için, kullanıcı deneyimini geliştirmek amacıyla yüksek kaliteli resimler ve videolar seçtiğinizden emin olun.
+Sonsuz Kaydırma : Bu, kullanıcının sayfayı aşağı kaydırdıkça daha fazla içerik yükleyen bir tasarım desenidir. Kullanıcıya daha fazla içerik görmek istediği zamanı kontrol etme olanağı sağladığı için "Daha Fazla Yükle" düğmesi kullanmayı düşünmelisiniz. Ayrıca, kullanıcıların en başa kadar kaydırmak zorunda kalmadan önceki sayfaya geri dönebilmeleri için bir geri düğmesi de ekleyebilirsiniz.
+Modal Diyalog : Bu, mevcut sayfa içeriğinin üzerinde görüntülenen bir tür açılır penceredir. Genellikle arka plan içeriği, kullanıcının modal içeriğe daha iyi odaklanmasına yardımcı olmak için soluk bir renk katmanına sahip olur. Ayrıca, kullanıcının modalı kapatmak için dışına tıklamasına izin vermek her zaman iyi bir fikirdir. HTML dialogöğesini kullandığınızda, yerleşik birçok işlevsellik ve erişilebilirlik avantajından yararlanacaksınız.
+Form Kaydı İçin İlerleme Göstergesi : Bu, kullanıcılara bir süreçte ne kadar ilerlediklerini göstermenin bir yoludur. Formlarda, kayıt ve kurulum süreçlerinde kullanılabilir. Tasarımınız basit, kolay bulunabilir olmalı ve önceki adımlara geri dönmeyi mümkün kılmalıdır.
+Alışveriş Sepeti : Sepetler, kullanıcıların e-ticaret platformunda zaten seçtikleri ürünleri görebilecekleri bir yerdir. Sepetleriniz her zaman kullanıcı tarafından görülebilir olmalı, sepet, çanta veya kasa gibi yaygın bir simge kullanmalı ve kullanıcıların ödeme işlemine devam etmeleri için net bir harekete geçirici düğmeye sahip olmalıdır.
+Ortak Tasarım Araçları
+Figma : Bu bulut tabanlı araç, Kullanıcı Arayüzü ve Kullanıcı Deneyimi (UI/UX) tasarımında uzmanlaşmıştır. Tasarım ve geliştirme ekiplerinin her yerden iş birliği yapmasını sağlar ve vektör tabanlı tasarım, otomatik yerleşim, yorum ve geri bildirim sistemi gibi yerleşik özellikler sunar.
+Sketch : Sezgisel arayüzü ve sadeliği sayesinde prototipleri hızlıca oluşturmak isteyen geliştiriciler için ideal olan popüler bir tasarım aracıdır. Ayrıca, kullanıcı arayüzleri, simgeler ve web düzenleri oluşturmak gibi görevler için tasarımcılar tarafından da yaygın olarak kullanılır.
+Adobe XD : Bu, UI/UX tasarımı için vektör tabanlı bir tasarım ve prototipleme aracıdır ve Photoshop, Illustrator ve After Effects gibi diğer Adobe uygulamalarıyla sorunsuz entegrasyonuyla bilinir.
+Canva : Bu araç, posterler, kapak fotoğrafları, sunumlar, kısa videolar ve daha fazlasını içeren çok çeşitli görsel içerik oluşturmanıza olanak tanır. Kullanıcı dostu ve basit tasarımı, onu yeni başlayanlar için ideal hale getirir.
