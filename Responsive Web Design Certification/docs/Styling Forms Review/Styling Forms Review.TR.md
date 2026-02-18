@@ -1,0 +1,7 @@
+Stil Formları İncelemesi
+Stil Girişleri İçin En İyi Uygulamalar
+Giriş Alanlarının Stillendirilmesi : Tüm metin öğelerinde olduğu gibi, metin giriş alanlarına uyguladığınız stillerin erişilebilir olduğundan emin olmalısınız. Bu, yazı tipinin yeterli boyutta olması ve rengin arka planla yeterli kontrast oluşturması gerektiği anlamına gelir. Giriş öğeleri ayrıca odaklanabilir özelliktedir. Stillerinizi düzenlerken, öğenin odaklandığını gösteren belirgin bir göstergeyi (örneğin kalın bir kenarlık) korumaya özen göstermelisiniz.
+appearance: noneGirişler için kullanılıyor
+appearance: noneTarayıcılar birçok öğeye varsayılan stil uygular. appearance: noneCSS özelliği size stil üzerinde tam kontrol sağlar, ancak bazı sakıncaları da beraberinde getirir. Giriş öğeleri için özel stiller oluştururken, odaklanma ve hata göstergelerinin hala mevcut olduğundan emin olmanız gerekir.
+Ortak Sorunlar Stil datetime-localve colorÖzellikler
+Sık Karşılaşılan Sorunlar : Bu özel giriş türleri, tarih ve renk seçiciler gibi şeyler oluşturmak için karmaşık sözde öğelere dayanır. Bu, bu girişlerin stilini belirlemede önemli bir zorluk oluşturur. Zorluklardan biri, varsayılan stilin tamamen tarayıcıya bağlı olmasıdır; bu nedenle, seçicinin istediğiniz gibi görünmesini sağlamak için yazdığınız CSS, başka bir tarayıcıda tamamen farklı olabilir.
