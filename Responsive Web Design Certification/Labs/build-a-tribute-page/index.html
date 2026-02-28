@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ada Lovelace — The First Programmer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=IM+Fell+English:ital@0;1&family=Cormorant+Garamond:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #1a1209;
+      --parchment: #f5edd6;
+      --aged: #e8d9b0;
+      --rust: #8b3a2a;
+      --gold: #b8860b;
+      --sepia: #7a5c2e;
+      --cream: #fdf6e3;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background-color: var(--cream);
+      background-image:
+        repeating-linear-gradient(0deg, transparent, transparent 27px, rgba(120,90,40,0.07) 28px),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      font-family: 'Cormorant Garamond', serif;
+      color: var(--ink);
+      min-height: 100vh;
+    }
+
+    main#main {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 60px 40px 80px;
+      position: relative;
+    }
+
+    /* Decorative border */
+    main#main::before {
+      content: '';
+      position: fixed;
+      top: 16px; left: 16px; right: 16px; bottom: 16px;
+      border: 2px solid var(--gold);
+      pointer-events: none;
+      z-index: 100;
+      opacity: 0.4;
+    }
+
+    /* Header area */
+    .header-ornament {
+      text-align: center;
+      color: var(--gold);
+      font-size: 1.4rem;
+      letter-spacing: 0.5em;
+      margin-bottom: 10px;
+      opacity: 0.7;
+    }
+
+    #title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 7vw, 5.2rem);
+      font-weight: 900;
+      text-align: center;
+      line-height: 1.0;
+      color: var(--ink);
+      letter-spacing: -0.02em;
+    }
+
+    #title em {
+      font-style: italic;
+      color: var(--rust);
+    }
+
+    .subtitle {
+      font-family: 'IM Fell English', serif;
+      font-style: italic;
+      text-align: center;
+      font-size: 1.25rem;
+      color: var(--sepia);
+      margin-top: 12px;
+      letter-spacing: 0.05em;
+    }
+
+    .divider {
+      text-align: center;
+      margin: 28px auto;
+      color: var(--gold);
+      font-size: 1.1rem;
+      letter-spacing: 0.6em;
+    }
+
+    /* Image section */
+    #img-div {
+      background: var(--aged);
+      border: 1px solid var(--gold);
+      padding: 20px;
+      margin: 0 auto 48px;
+      max-width: 480px;
+      box-shadow: 6px 6px 0 rgba(120,80,20,0.15), inset 0 0 40px rgba(180,140,60,0.1);
+      position: relative;
+    }
+
+    #img-div::before, #img-div::after {
+      content: '❧';
+      position: absolute;
+      color: var(--gold);
+      font-size: 1.2rem;
+      opacity: 0.5;
+    }
+    #img-div::before { top: 8px; left: 8px; }
+    #img-div::after { bottom: 8px; right: 8px; transform: scaleX(-1); }
+
+    #image {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin: 0 auto;
+      filter: sepia(60%) contrast(1.05);
+      width: 100%;
+    }
+
+    #img-caption {
+      font-family: 'IM Fell English', serif;
+      font-style: italic;
+      text-align: center;
+      font-size: 0.95rem;
+      color: var(--sepia);
+      margin-top: 14px;
+      line-height: 1.5;
+      padding: 0 8px;
+    }
+
+    /* Timeline / info section */
+    #tribute-info {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    #tribute-info h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      text-align: center;
+      color: var(--rust);
+      margin-bottom: 24px;
+      letter-spacing: 0.04em;
+    }
+
+    .timeline {
+      border-left: 2px solid var(--gold);
+      padding-left: 28px;
+      margin-left: 12px;
+    }
+
+    .timeline-item {
+      margin-bottom: 22px;
+      position: relative;
+    }
+
+    .timeline-item::before {
+      content: '◆';
+      position: absolute;
+      left: -38px;
+      color: var(--gold);
+      font-size: 0.75rem;
+      top: 4px;
+    }
+
+    .timeline-year {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--rust);
+      display: inline-block;
+      margin-right: 8px;
+    }
+
+    .timeline-text {
+      font-size: 1.08rem;
+      line-height: 1.7;
+      color: var(--ink);
+    }
+
+    /* Pull quote */
+    .pull-quote {
+      margin: 36px 0;
+      padding: 24px 32px;
+      border-top: 1px solid var(--gold);
+      border-bottom: 1px solid var(--gold);
+      text-align: center;
+    }
+
+    .pull-quote p {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.35rem;
+      line-height: 1.6;
+      color: var(--sepia);
+    }
+
+    .pull-quote cite {
+      display: block;
+      margin-top: 10px;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: normal;
+      font-size: 0.9rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    /* Footer link */
+    .tribute-footer {
+      text-align: center;
+      margin-top: 48px;
+      padding-top: 28px;
+      border-top: 1px solid rgba(184,134,11,0.35);
+    }
+
+    .tribute-footer p {
+      font-family: 'IM Fell English', serif;
+      font-style: italic;
+      font-size: 1.05rem;
+      color: var(--sepia);
+      margin-bottom: 14px;
+    }
+
+    #tribute-link {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--cream);
+      background: var(--rust);
+      padding: 12px 28px;
+      text-decoration: none;
+      border: 1px solid var(--ink);
+      box-shadow: 3px 3px 0 var(--ink);
+      transition: all 0.15s ease;
+      display: inline-block;
+    }
+
+    #tribute-link:hover {
+      background: var(--ink);
+      box-shadow: 1px 1px 0 var(--ink);
+      transform: translate(2px, 2px);
+    }
+
+    @media (max-width: 600px) {
+      main#main { padding: 40px 24px 60px; }
+      #img-div { padding: 14px; }
+    }
+  </style>
+</head>
+<body>
+  <main id="main">
+    <div class="header-ornament">✦ ✦ ✦</div>
+
+    <h1 id="title"><em>Ada</em> Lovelace</h1>
+    <p class="subtitle">Mathematician · Visionary · The World's First Programmer</p>
+    <div class="divider">· · ❦ · ·</div>
+
+    <figure id="img-div">
+      <img
+        id="image"
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Ada_Lovelace_portrait.jpg/460px-Ada_Lovelace_portrait.jpg"
+        alt="Portrait of Ada Lovelace"
+      />
+      <figcaption id="img-caption">
+        A portrait of Augusta Ada King, Countess of Lovelace (1815–1852) —<br/>
+        daughter of the poet Byron, and architect of the first algorithm.
+      </figcaption>
+    </figure>
+
+    <section id="tribute-info">
+      <h2>A Life in Milestones</h2>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <span class="timeline-year">1815</span>
+          <span class="timeline-text">Born in London to the poet Lord Byron and mathematician Anne Isabella Milbanke. Her mother, fearing she would inherit Byron's "madness," steered her firmly toward mathematics.</span>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-year">1833</span>
+          <span class="timeline-text">At seventeen, introduced to Charles Babbage at a dinner party. She immediately grasped the potential of his unbuilt Difference Engine — a friendship and intellectual partnership began that would change history.</span>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-year">1835</span>
+          <span class="timeline-text">Married William King, later Earl of Lovelace. She became Ada, Countess of Lovelace — but never ceased her mathematical pursuits, corresponding with the greatest scientific minds of the age.</span>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-year">1842–43</span>
+          <span class="timeline-text">Translated an Italian engineer's memoir on Babbage's Analytical Engine from French. Her annotations — three times longer than the original — contained what is now recognised as the world's first computer algorithm.</span>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-year">1843</span>
+          <span class="timeline-text">Published her landmark "Note G," describing how the engine could be programmed to compute Bernoulli numbers — a complete, step-by-step algorithm. She also foresaw that machines might one day compose music and manipulate symbols beyond mere numbers.</span>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-year">1852</span>
+          <span class="timeline-text">Died at only thirty-six, from cancer — the same age her father Byron had died. Her work was largely forgotten for a century, until Alan Turing and the computing age rediscovered its profound prescience.</span>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-year">1980</span>
+          <span class="timeline-text">The United States Department of Defense named a new programming language "Ada" in her honour — cementing her legacy as the patron saint of software.</span>
+        </div>
+      </div>
+
+      <div class="pull-quote">
+        <p>"The Analytical Engine has no power of originating anything. It can only do what we know how to order it to perform."</p>
+        <cite>— Ada Lovelace, 1843</cite>
+      </div>
+
+      <p style="font-size:1.08rem; line-height:1.75; color:var(--ink); text-align:center; max-width:580px; margin:0 auto;">
+        A century before the digital age, Ada Lovelace saw not merely a calculating machine, but a universal engine of thought. Her vision of what computers could become — tools for creativity, music, and science — defines computing to this day.
+      </p>
+    </section>
+
+    <footer class="tribute-footer">
+      <p>To learn more about this remarkable pioneer:</p>
+      <a
+        id="tribute-link"
+        href="https://en.wikipedia.org/wiki/Ada_Lovelace"
+        target="_blank"
+        rel="noopener noreferrer"
+      >Read Her Story</a>
+    </footer>
+  </main>
+</body>
+</html>
