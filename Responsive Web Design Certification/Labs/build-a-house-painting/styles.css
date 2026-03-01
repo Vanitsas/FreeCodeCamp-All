@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(
+    180deg,
+    #fceabb 0%, #f8b500 30%,
+    #87ceeb 30%, #87ceeb 70%,
+    #5d8a4e 70%, #3a5f2e 100%
+  );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Playfair Display', serif;
+  overflow: hidden;
+}
+
+/* Bulutlar */
+body::before,
+body::after {
+  content: '';
+  position: fixed;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50px;
+  animation: drift 20s linear infinite;
+}
+
+body::before {
+  width: 120px;
+  height: 40px;
+  top: 15%;
+  left: -150px;
+  box-shadow:
+    60px -10px 0 10px rgba(255, 255, 255, 0.8),
+    100px 0 0 5px rgba(255, 255, 255, 0.8);
+}
+
+body::after {
+  width: 80px;
+  height: 30px;
+  top: 22%;
+  left: -100px;
+  animation-delay: 8s;
+  animation-duration: 25s;
+  box-shadow: 40px -8px 0 8px rgba(255, 255, 255, 0.8);
+}
+
+@keyframes drift {
+  to { left: 110vw; }
+}
+
+h1 {
+  color: #fff;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+  letter-spacing: 2px;
+}
+
+.scene {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ── EV ── */
+#house {
+  position: relative;
+  width: 500px;
+  height: 400px;
+  background-color: #f5e6c8;
+  border: 4px solid #8b5e3c;
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.35),
+    inset 0 0 30px rgba(139, 94, 60, 0.1);
+}
+
+/* ── BACA ── */
+#chimney {
+  position: absolute;
+  width: 60px;
+  height: 90px;
+  background-color: #c0392b;
+  border: 3px solid #7b241c;
+  top: -90px;
+  left: 80px;
+  z-index: -1;
+  border-radius: 4px 4px 0 0;
+}
+
+/* Baca dumanı */
+#chimney::before,
+#chimney::after {
+  content: '💨';
+  position: absolute;
+  font-size: 1.4rem;
+  top: -30px;
+  animation: puff 3s ease-in-out infinite;
+}
+
+#chimney::before { left: 5px;  animation-delay: 0s; }
+#chimney::after  { left: 20px; animation-delay: 1.2s; }
+
+@keyframes puff {
+  0%   { opacity: 0; transform: translateY(0)    scale(0.5); }
+  50%  { opacity: 1; transform: translateY(-20px) scale(1);   }
+  100% { opacity: 0; transform: translateY(-45px) scale(1.4); }
+}
+
+/* ── ÇATI ── */
+#roof {
+  position: absolute;
+  width: 540px;
+  height: 130px;
+  background-color: #c0392b;
+  border: 4px solid #7b241c;
+  top: 0;
+  left: -24px;
+  clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+}
+
+/* ── PENCERELER ── */
+#window-1,
+#window-2 {
+  position: absolute;
+  width: 90px;
+  height: 100px;
+  background-color: #aed6f1;
+  border: 4px solid #8b5e3c;
+  top: 150px;
+  border-radius: 6px 6px 2px 2px;
+}
+
+/* Çapraz çubuklar */
+#window-1::before, #window-2::before {
+  content: '';
+  position: absolute;
+  background: #8b5e3c;
+  width: 3px;
+  height: 100%;
+  left: 50%;
+  top: 0;
+}
+
+#window-1::after, #window-2::after {
+  content: '';
+  position: absolute;
+  background: #8b5e3c;
+  width: 100%;
+  height: 3px;
+  top: 50%;
+  left: 0;
+}
+
+#window-1 { left: 60px; }
+#window-2 { right: 60px; }
+
+/* ── KAPI ── */
+#door {
+  position: absolute;
+  width: 90px;
+  height: 130px;
+  background-color: #8b5e3c;
+  border: 4px solid #5d3a1e;
+  bottom: 0;
+  left: 205px;
+  border-radius: 50% 50% 0 0 / 30% 30% 0 0;
+}
+
+/* Kapı kolu */
+#door::after {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: #f0c040;
+  border-radius: 50%;
+  right: 14px;
+  top: 50%;
+  box-shadow: 0 0 5px rgba(240, 192, 64, 0.7);
+}
+
+/* Kapı penceresi */
+#door::before {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: #aed6f1;
+  border: 2px solid #5d3a1e;
+  border-radius: 50% 50% 0 0 / 50% 50% 0 0;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* ── ZEMİN ŞERİDİ ── */
+.ground {
+  width: 500px;
+  height: 30px;
+  background: linear-gradient(#5d8a4e, #3a5f2e);
+  border: 2px solid #2a4a1e;
+  border-top: none;
+}
+
+/* ── ÇALILI KLAR ── */
+.bushes {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  gap: 6px;
+}
+
+.bushes.left  { left: 8px; }
+.bushes.right { right: 8px; }
+
+.bush {
+  width: 45px;
+  height: 40px;
+  background: radial-gradient(circle, #5d8a4e, #2d5a1e);
+  border-radius: 50% 50% 40% 40%;
+  border: 2px solid #2a4a1e;
+}
+
+.bush:nth-child(2) {
+  width: 35px;
+  height: 32px;
+  margin-top: 8px;
+}
