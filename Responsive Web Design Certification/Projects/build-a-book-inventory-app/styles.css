@@ -1,0 +1,72 @@
+span {
+  display: inline-block;
+}
+
+/* ROW BACKGROUNDS */
+
+tr[class="read"] {
+  background-image: linear-gradient(to right, #d4edda, #a8d5b5);
+}
+
+tr[class="to-read"] {
+  background-image: linear-gradient(to right, #d0e8f1, #a0c4d8);
+}
+
+tr[class="in-progress"] {
+  background-image: linear-gradient(to right, #fff3cd, #ffd78a);
+}
+
+/* STATUS STYLING */
+
+tr[class="to-read"] span[class="status"] {
+  border: 2px solid #1a6fa0;
+  background-image: linear-gradient(to right, #d0e8f1, #7ab8d4);
+}
+
+tr[class="read"] span[class="status"] {
+  border: 2px solid #2a7a4b;
+  background-image: linear-gradient(to right, #d4edda, #7ab895);
+}
+
+tr[class="in-progress"] span[class="status"] {
+  border: 2px solid #c07000;
+  background-image: linear-gradient(to right, #fff3cd, #ffc857);
+}
+
+/* STATUS + RATE BASE SIZE */
+
+span[class="status"],
+span[class^="rate"] {
+  height: 20px;
+  width: 70px;
+  padding: 2px;
+}
+
+/* RATE CIRCLES */
+
+span[class^="rate"] > span {
+  border: 1px solid #999;
+  border-radius: 50%;
+  margin: 2px;
+  height: 14px;
+  width: 14px;
+  background-color: #ccc;
+}
+
+/* RATING COLORS */
+
+/* one → first descendant */
+span[class~="one"] span:nth-child(1) {
+  background-image: linear-gradient(to right, #4facfe, #00f2fe);
+}
+
+/* two → first two descendants */
+span[class~="two"] span:nth-child(1),
+span[class~="two"] span:nth-child(2) {
+  background-image: linear-gradient(to right, #43e97b, #38f9d7);
+}
+
+/* three → all descendants */
+span[class~="three"] span {
+  background-image: linear-gradient(to right, #fa709a, #fee140);
+}
