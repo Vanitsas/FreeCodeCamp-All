@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Availability Table</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@700;800&display=swap');
+
+    :root {
+      --color0: #0d0d0d;
+      --color1: #1a3a2a;
+      --color2: #1f6b45;
+      --color3: #28a465;
+      --color4: #4fd68a;
+      --color5: #a8ffcd;
+
+      --solid-border: 2px solid #333;
+      --dashed-border: 2px dashed #2a2a2a;
+
+      --bg: #080808;
+      --surface: #111;
+      --text: #e8e8e0;
+      --muted: #555;
+      --accent: #4fd68a;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'DM Mono', monospace;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem 1.5rem;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    header h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(2rem, 6vw, 4rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--accent);
+      text-transform: uppercase;
+      line-height: 1;
+    }
+
+    header p {
+      margin-top: 0.5rem;
+      font-size: 0.75rem;
+      color: var(--muted);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .table-wrapper {
+      overflow-x: auto;
+      width: 100%;
+      max-width: 860px;
+      border: 1px solid #1e1e1e;
+      border-radius: 4px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.78rem;
+      letter-spacing: 0.04em;
+    }
+
+    thead tr th {
+      background: #0f0f0f;
+      color: var(--accent);
+      font-family: 'Syne', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      padding: 1rem 1.2rem;
+      text-align: center;
+      border-bottom: 1px solid #222;
+    }
+
+    thead tr th:first-child {
+      text-align: left;
+      color: var(--muted);
+    }
+
+    th.time {
+      text-align: left;
+      color: var(--muted);
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 400;
+      padding: 0.75rem 1.2rem;
+      white-space: nowrap;
+      background: #0a0a0a;
+      border-right: 1px solid #1a1a1a;
+    }
+
+    td {
+      text-align: center;
+      padding: 0;
+      height: 44px;
+      transition: opacity 0.15s;
+    }
+
+    td:hover {
+      opacity: 0.75;
+      cursor: default;
+    }
+
+    .sharp td {
+      border-bottom: var(--solid-border);
+    }
+
+    .half td {
+      border-bottom: var(--dashed-border);
+    }
+
+    .available-0 { background-color: var(--color0); }
+    .available-1 { background-color: var(--color1); }
+    .available-2 { background-color: var(--color2); }
+    .available-3 { background-color: var(--color3); }
+    .available-4 { background-color: var(--color4); }
+    .available-5 { background-color: var(--color5); }
+
+    /* Legend */
+    #legend {
+      margin-top: 2.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      max-width: 860px;
+      width: 100%;
+    }
+
+    #legend span {
+      font-size: 0.68rem;
+      color: var(--muted);
+      letter-spacing: 0.14em;
+      white-space: nowrap;
+      font-family: 'Syne', sans-serif;
+    }
+
+    #legend-gradient {
+      flex: 1;
+      height: 12px;
+      border-radius: 2px;
+      background-image: linear-gradient(
+        to right,
+        var(--color0) 0%,
+        var(--color0) 17%,
+        var(--color1) 17%,
+        var(--color1) 33%,
+        var(--color2) 33%,
+        var(--color2) 50%,
+        var(--color3) 50%,
+        var(--color3) 67%,
+        var(--color4) 67%,
+        var(--color4) 83%,
+        var(--color5) 83%,
+        var(--color5) 100%
+      );
+      border: 1px solid #222;
+    }
+
+    .legend-labels {
+      display: flex;
+      justify-content: space-between;
+      max-width: 860px;
+      width: 100%;
+      margin-top: 0.4rem;
+      padding: 0 0 0 4.5rem;
+    }
+
+    .legend-labels span {
+      font-size: 0.6rem;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Team Schedule</h1>
+    <p>Weekly availability overview</p>
+  </header>
+
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th></th>
+          <th>Monday</th>
+          <th>Tuesday</th>
+          <th>Wednesday</th>
+          <th>Thursday</th>
+          <th>Friday</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="sharp">
+          <th class="time">9:00 AM</th>
+          <td class="available-5"></td>
+          <td class="available-4"></td>
+          <td class="available-5"></td>
+          <td class="available-3"></td>
+          <td class="available-4"></td>
+        </tr>
+        <tr class="half">
+          <th class="time">9:30 AM</th>
+          <td class="available-3"></td>
+          <td class="available-5"></td>
+          <td class="available-4"></td>
+          <td class="available-5"></td>
+          <td class="available-2"></td>
+        </tr>
+        <tr class="sharp">
+          <th class="time">10:00 AM</th>
+          <td class="available-4"></td>
+          <td class="available-2"></td>
+          <td class="available-3"></td>
+          <td class="available-4"></td>
+          <td class="available-5"></td>
+        </tr>
+        <tr class="half">
+          <th class="time">10:30 AM</th>
+          <td class="available-2"></td>
+          <td class="available-3"></td>
+          <td class="available-1"></td>
+          <td class="available-2"></td>
+          <td class="available-3"></td>
+        </tr>
+        <tr class="sharp">
+          <th class="time">11:00 AM</th>
+          <td class="available-1"></td>
+          <td class="available-1"></td>
+          <td class="available-2"></td>
+          <td class="available-1"></td>
+          <td class="available-0"></td>
+        </tr>
+        <tr class="half">
+          <th class="time">11:30 AM</th>
+          <td class="available-0"></td>
+          <td class="available-0"></td>
+          <td class="available-1"></td>
+          <td class="available-0"></td>
+          <td class="available-1"></td>
+        </tr>
+        <tr class="sharp">
+          <th class="time">12:00 PM</th>
+          <td class="available-2"></td>
+          <td class="available-3"></td>
+          <td class="available-4"></td>
+          <td class="available-3"></td>
+          <td class="available-2"></td>
+        </tr>
+        <tr class="half">
+          <th class="time">12:30 PM</th>
+          <td class="available-4"></td>
+          <td class="available-4"></td>
+          <td class="available-5"></td>
+          <td class="available-4"></td>
+          <td class="available-3"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div id="legend">
+    <span>Availability</span>
+    <div id="legend-gradient"></div>
+  </div>
+
+  <div class="legend-labels">
+    <span>0</span>
+    <span>1</span>
+    <span>2</span>
+    <span>3</span>
+    <span>4</span>
+    <span>5</span>
+  </div>
+
+</body>
+</html>
